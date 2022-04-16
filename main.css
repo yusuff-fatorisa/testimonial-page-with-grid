@@ -1,0 +1,295 @@
+/*
+Pre-Requisite
+*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Barlow Semi Condensed', sans-serif;
+	/*overflow-x: hidden;*/
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+:root {
+	--Moderate-violet: hsl(263, 55%, 52%);
+	--Very-dark-grayish-blue: hsl(217, 19%, 35%);
+	--Very-dark-blackish-blue: hsl(219, 29%, 14%);
+	--White: hsl(0, 0%, 100%);
+	--Light-gray: hsl(0, 0%, 81%);
+	--Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/*
+Body Styling
+*/
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: calc(100vh - 3px);
+	overflow-x: hidden;
+}
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	background-image: url(./images/bg-pattern-quotation.svg);
+	background-color: var(--Light-grayish-blue);
+	background-repeat: no-repeat;
+}
+
+
+.wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	padding: 10px;
+}
+
+/*
+Wrapper Styling
+*/
+
+.wrapper > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 25px;
+	padding: 2rem;
+	border-radius: 10px;
+}
+
+.bio {
+	display: flex;
+	gap: 25px;
+	/*align-items: center;*/
+}
+
+.bio span {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+}
+
+.bio img {
+	border-radius: 50%;
+}
+
+.bio span h1:nth-of-type(1) {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--White);
+}
+
+.bio span h1:nth-of-type(2) {
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--White);
+	opacity: 0.5;
+}
+
+.testimonials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+	color: var(--White);
+}
+
+.testimonials h5 {
+	font-size: 23px;
+	font-weight: 600;
+}
+
+.testimonials p {
+	opacity: 0.7;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+
+/*
+Daniel Clifford Styling
+*/
+
+.daniel-clifford {
+	grid-column: 1/span 2;
+	background-color: var(--Moderate-violet);
+}
+
+/*
+Jonathan Walters Styling
+*/
+
+.jonathan-walters {
+	grid-column: 3;
+	grid-row: 1;
+	background-color: var(--Very-dark-grayish-blue);
+}
+
+
+/*
+Jeanette Harmon Styling
+*/
+
+.jeanette-harmon {
+	grid-column: 1;
+	grid-row: 2;
+	background-color: var(--White);
+	color: black;
+}
+
+.jeanette-harmon .bio h1 {
+	color: black !important;
+}
+
+.jeanette-harmon .testimonials {
+	color: black;
+}
+
+/*
+Patrick Abrams Styling
+*/
+
+.patrick-abrams {
+	grid-column: 2/ span 2;
+	grid-row: 2;
+	background-color: var(--Very-dark-blackish-blue);
+}
+
+/*
+Kira Whittle Styling
+*/
+
+.kira-whittle {
+	grid-column: 4;
+	grid-row: 1/ span 2;
+	background-color: var(--White);
+	color: black;
+}
+
+.kira-whittle .bio h1 {
+	color: black !important;
+}
+
+.kira-whittle .testimonials {
+	color: black;
+}
+
+/*
+Media Queries
+*/
+
+@media screen and (max-width: 1270px) {
+	.wrapper {
+		gap: 10px;
+	}
+
+	.wrapper > div {
+		gap: 11px;
+		padding: 12px;
+	}
+
+	.bio {
+		gap: 10px;
+	}
+
+	.bio img {
+		width: 40px;
+		height: 40px;
+	}
+
+	.bio span h1:nth-of-type(1) {
+		font-size: 14px;
+	}
+
+	.bio span h1:nth-of-type(2) {
+		font-size: 15px;
+	}
+
+	.testimonials h5 {
+		font-size: 15.5px;
+	}
+
+	.testimonials p {
+		font-size: 11px;
+	}
+}
+
+@media screen and (max-width: 890px) {
+	.bio img {
+		width: 25px;
+		height: 25px;
+	}
+
+	.bio span h1:nth-of-type(1) {
+		font-size: 10px;
+	}
+
+	.bio span h1:nth-of-type(2) {
+		font-size: 10.5px;
+	}
+
+	.testimonials h5 {
+		font-size: 11px;
+	}
+
+	.testimonials p {
+		font-size: 9px;
+	}
+}
+
+/*
+Mobile Media Query
+*/
+ 
+@media screen and (max-width: 740px) {
+	.wrapper {
+		grid-template-areas: 
+		"daniel-clifford"
+		"jonathan-walters"
+		"jeanette-harmon"
+		"patrick-abrams"
+		"kira-whittle";
+		grid-template-columns: unset;
+	}
+
+	.wrapper > div {
+		width: 55%;
+	}
+
+	.daniel-clifford {
+		grid-area: daniel-clifford;
+	}
+
+	.jonathan-walters {
+		grid-area: jonathan-walters;
+	}
+
+	.jeanette-harmon {
+		grid-area: jeanette-harmon;
+	}
+
+	.patrick-abrams {
+		grid-area: patrick-abrams;
+	}
+
+	.kira-whittle {
+		grid-area: kira-whittle;
+	}
+}
