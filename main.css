@@ -7,7 +7,6 @@ Pre-Requisite
 	margin: 0;
 	padding: 0;
 	font-family: 'Barlow Semi Condensed', sans-serif;
-	/*overflow-x: hidden;*/
 }
 
 .attribution {
@@ -50,6 +49,8 @@ body {
 	background-image: url(./images/bg-pattern-quotation.svg);
 	background-color: var(--Light-grayish-blue);
 	background-repeat: no-repeat;
+	background-position: top 2px left 33%;
+	padding-bottom: 15px;
 }
 
 
@@ -195,6 +196,16 @@ Kira Whittle Styling
 Media Queries
 */
 
+@media screen and (max-width: 1480px) {
+	.testimonials h5 {
+		font-size: 19px;
+	}
+
+	.testimonials p {
+		font-size: 12px;
+	}
+}
+
 @media screen and (max-width: 1270px) {
 	.wrapper {
 		gap: 10px;
@@ -231,10 +242,20 @@ Media Queries
 	}
 }
 
+@media screen and (max-width: 1005px) {
+	.testimonials h5 {
+		font-size: 13px;
+	}
+
+	.testimonials p {
+		font-size: 9.5px;
+	}
+}
+
 @media screen and (max-width: 890px) {
 	.bio img {
-		width: 25px;
-		height: 25px;
+		width: 23px;
+		height: 23px;
 	}
 
 	.bio span h1:nth-of-type(1) {
@@ -246,11 +267,15 @@ Media Queries
 	}
 
 	.testimonials h5 {
-		font-size: 11px;
+		font-size: 10px;
 	}
 
 	.testimonials p {
-		font-size: 9px;
+		font-size: 8px;
+	}
+
+	.daniel-clifford .testimonials p {
+		font-size: 7.5px;
 	}
 }
 
@@ -267,10 +292,17 @@ Mobile Media Query
 		"patrick-abrams"
 		"kira-whittle";
 		grid-template-columns: unset;
+		align-items: center;
+		justify-items: center;
+		width: 210px;
 	}
 
 	.wrapper > div {
-		width: 55%;
+		width: 100%;
+	}
+
+	br {
+		content: "";
 	}
 
 	.daniel-clifford {
